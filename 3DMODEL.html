@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3D MODEL Project - Izzah's Portfolio</title>
+<style>
+  :root {
+    --color-bg: #ffffff;
+    --color-text: #111827;
+    --color-text-muted: #6b7280;
+    --color-primary: #000000;
+    --radius: 0.75rem;
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  .container {
+    width: min(90vw, 1100px);
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--color-primary);
+  }
+  nav a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+  nav a:hover,
+  nav a:focus {
+    text-decoration: underline;
+  }
+  main p {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  figure {
+    margin: 0;
+    text-align: center;
+  }
+  figure img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-light);
+  }
+  figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+  .centered-image {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    margin: 1rem 0; /* Optional: Add some vertical spacing */
+  }
+  .centered-image img {
+    width: 50%; /* Set the width to 50% for medium size */
+    height: auto; /* Maintain aspect ratio */
+  }
+  footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+  button.reset-link {
+    background: none;
+    border: 2px solid var(--color-primary);
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: var(--color-primary);
+    transition: var(--transition);
+    margin-top: 1rem;
+  }
+  button.reset-link:hover,
+  button.reset-link:focus {
+    background-color: var(--color-primary);
+    color: white;
+    outline: none;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>3D MODEL Project</h1>
+    <nav>
+      <a href="index.html" aria-label="Return to portfolio homepage">&larr; Back to Portfolio</a>
+    </nav>
+  </header>
+  <main>
+    <div class="image-gallery">
+      <figure>
+        <img src="arcade.png" alt="Screenshot of 3D MODEL project showing a 3D rendered shape with UI controls" />
+        <figcaption>Arcade Machine using Blender</figcaption>
+      </figure>
+      <figure>
+        <img src="trumpet.png" alt="3D Model Image 1" />
+        <figcaption>Trumpet using 3dx Max</figcaption>
+      </figure>
+      <figure>
+        <img src="barrel.png" alt="3D Model Image 2" />
+        <figcaption>Barrel using 3dx Max</figcaption>
+      </figure>
+      <figure>
+        <img src="electric.png" alt="3D Model Image 3" />
+        <figcaption>Electric Transformer using 3dx Max</figcaption>
+      </figure>
+      <figure>
+        <img src="ice.png" alt="3D Model Image 4" />
+        <figcaption>Ice Cream Stall</figcaption>
+      </figure>
+      <figure>
+        <img src="mush.png" alt="Screenshot of 3D MODEL project showing a 3D rendered shape with UI controls" />
+        <figcaption>Arcade Machine using Blender</figcaption>
+      </figure>
+      <figure>
+        <img src="DORE.png" alt="3D Model Image 2" />
+        <figcaption>My NPC in FYP using 3dx Max</figcaption>
+      </figure>
+      <figure>
+        <img src="lampu.png" alt="3D Model Image 2" />
+        <figcaption>Street Light using 3dx Max</figcaption>
+      </figure>
+      <figure>
+        <img src="sampah.png" alt="3D Model Image 3" />
+        <figcaption>Street Garbage using 3dx Max</figcaption>
+      </figure>
+   
+    </div>
+
+    
+    <div class="centered-image">
+      <img src="house.png" alt="Description of the image" />
+    </div>
+    <p>This is a 3D model of my dream house, brought to life using 3ds Max. Developed as part of a Virtual Reality (VR) assignment, it highlights my skills in architectural visualization and 3D environment creation.</p>
+    
+    <p>Click here to view the project report: <a href="https://drive.google.com/file/d/1wTsf53Sq8iwFsIwzHaWKeHSQTcUI263J/view?usp=sharing" target="_blank" rel="noopener noreferrer">here</a>.</p>
+
+    <button onclick="location.href='index.html'" class="reset-link" aria-label="Return to portfolio homepage">Back to Portfolio</button>
+  </main>
+  <footer>
+    &copy; 2024 Izzah. All rights reserved.
+  </footer>
+</div>
+</body>
+</html>
