@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Izzah | Portfolio</title>
+<style>
+  :root {
+    --color-bg: #ffffff;
+    --color-text: #111827;
+    --color-text-muted: #6b7280;
+    --color-primary: #000000;
+    --radius: 0.75rem;
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4,0,0,0.2,1);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: var(--transition);
+  }
+
+  a:hover, a:focus {
+    color: #4b5563;
+    outline: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-text);
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    color: var(--color-text-muted);
+    font-size: 1.125rem;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  button {
+    font-family: var(--font-sans);
+    cursor: pointer;
+    border-radius: var(--radius);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    background-color: var(--color-primary);
+    color: white;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  button:hover, button:focus {
+    background-color: #222222;
+    transform: scale(1.05);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+
+  .container {
+    width: min(90vw, 1100px);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: var(--shadow-light);
+    z-index: 100;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4.5rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    user-select: none;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    font-weight: 600;
+    color: var(--color-text-muted);
+    position: relative;
+    padding-bottom: 0.25rem;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus {
+    color: var(--color-primary);
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .nav-links a:hover::after,
+  .nav-links a:focus::after {
+    width: 100%;
+  }
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    padding-top: 6rem;
+    padding-bottom: 15rem;
+    text-align: center;
+    background-image: url('purple sky.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0;
+  }
+
+  .hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1,
+  .hero p {
+    color: white;
+  }
+
+  .hero h1 {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .hero p {
+    max-width: 540px;
+    margin: 1rem auto 0;
+    font-size: 1.25rem;
+  }
+
+  .hero .cta {
+    margin-top: 3rem;
+  }
+
+  /* About Section */
+  .about {
+    padding: 6rem 0;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-image: url('path_to_your_about_image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .about p {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+  }
+
+  /* Projects Section */
+  .projects {
+    padding: 6rem 0;
+    background-image: url('path_to_your_projects_image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .projects h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .project-card {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-light);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    border: 1px solid #f3f4f6;
+  }
+
+  .project-card:hover,
+  .project-card:focus-within {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-color: #e5e7eb;
+    transform: translateY(-4px);
+    outline: none;
+  }
+
+  .project-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .project-card p {
+    flex-grow: 1;
+    color: var(--color-text-muted);
+  }
+
+  .project-card a {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    align-self: flex-start;
+  }
+
+  .project-card a:hover,
+  .project-card a:focus {
+    color: #1f2937;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem 0 3rem;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 640px) {
+    .hero h1 {
+      font-size: 2.25rem;
+    }
+
+    .projects h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="container" aria-label="Main Navigation">
+    <div class="logo" tabindex="0">Izzah</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" role="region" aria-label="Introduction">
+    <div class="container">
+      <h1>Hi, I’m Izzah — A Computer Science Student Specializing in Multimedia</h1>
+      <p>I’m passionate about crafting 3D models, creating animations, developing simple games, and building modern web applications.</p>
+    </div>
+  </section>
+
+  <section class="about" id="about" role="region" aria-label="About Me">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Bachelor of Computer Science (HONS.) Multimedia Computing student in Universiti Teknologi MARA (UiTM). Equipped with hands-on experience in web programming, game development, mobile application programming, and graphic design, with proficiency in tools such as Unity, Adobe Creative Suite, Modelling software and web development frameworks. I am eager to join an organization that offers practical learning opportunities aligned with my academic background.</p>
+    </div>
+  </section>
+
+  <section class="projects" id="projects" role="region" aria-label="Projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <article class="project-card" tabindex="0">
+          <h3>GAME DEVELOPMENT</h3>
+          <p>This project showcases the creation of compelling games using Construct 3 and Unity, emphasizing advanced gameplay mechanics and striking visual design.</p>
+          <a href="GAMEDEVELOPMENT.html" target="_blank" rel="noopener noreferrer">View Project</a>
+        </article>
+        <article class="project-card" tabindex="0">
+          <h3>3D MODEL</h3>
+          <p>By using Blender and 3ds Max to sculpt intricate 3D models, crafting detailed environments, characters, and props that forged truly immersive game worlds.</p>
+          <a href="3DMODEL.html" target="_blank" rel="noopener noreferrer">View Project</a>
+        </article>
+        <article class="project-card" tabindex="0">
+          <h3>WEBSITE DEVELOPMENT</h3>
+          <p>A dynamic website utilizing HTML, CSS, and JavaScript for the frontend, with a robust backend powered by Servlet/JSP and PHPMyAdmin for database management.</p>
+          <a href="WEBSITE.html" target="_blank" rel="noopener noreferrer">View Project</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer>
+  &copy; 2024 Izzah. All rights reserved.
+</footer>
+</body>
+</html>
